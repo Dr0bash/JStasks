@@ -1,0 +1,8 @@
+function getLength(array) {
+	if (array.pop() == undefined){
+		return 0;
+	}
+	else {
+		return getLength(array) + 1;
+	}
+}

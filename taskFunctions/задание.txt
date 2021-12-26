@@ -1,0 +1,13 @@
+const supporter1 = {
+    name: 'Milan',
+    
+    chant() {
+        setTimeout(console.log("Forza", this.name), 1000)
+    }
+}
+
+const supporter2 = {
+    name: 'Inter',
+}
+
+supporter2.chant = supporter1.chant.bind(supporter2);

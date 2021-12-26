@@ -1,0 +1,45 @@
+function censor() {
+    const myDictionary = [];
+    function myRes(x, y = 0){
+        let resString = "";
+        if (y != 0){
+            myDictionary.push([x, y]);
+        }
+        else {
+            x2 = x.split(' ');
+            for (let x1 of x2){
+                let flag = true;
+                for (let a of myDictionary){
+                    if (x1 == a[0]){
+                        console.log(1);
+                        resString += a[1];                        
+                        flag = false;
+                    }
+                    else if (x1 == a[1]){
+                        console.log(2);
+                        resString += a[0];
+                        flag = false;
+                    }
+                }
+                if (flag) {
+                    console.log(3);
+                    resString += x1;
+                }
+                resString += " ";
+            }
+            resString.slice(resString.length);
+            return resString;
+        }
+        
+    }
+    
+    return myRes;
+}
+
+const changeScene = censor();
+
+changeScene('PHP','JS');
+
+changeScene('backend', 'frontend');
+
+console.log(changeScene('PHP is the most popular programming language for backend web-development'));
